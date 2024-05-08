@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search {
+  outline: none;
+  border-right: 0;
+  border-color: black;
+}
+
+.search:focus {
+  border-color: black;
+}
+
+.image-grid {
+  overflow-y: auto;
+  height: 85vh;
+  width: 100%;
+}
+
+.error {
+  @apply bg-red-800;
+  @apply text-white;
+  width: 100%;
+  margin-block: 0.75rem;
+  text-align: center;
+}
+
+.search-button {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  @apply bg-black;
+  padding: 0.5rem;
+  font-weight: 600;
+  margin-right: 2.5rem;
+  border-left: 0;
+  border-width: 2px;
+  border-color: transparent;
+}
+
+.search-button:hover {
+  @apply bg-gray-800;
+}
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.skeleton-thumbnail {
+  height: 150px;
+  width: 150px;
+}
